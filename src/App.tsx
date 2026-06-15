@@ -1,52 +1,48 @@
-const conversations = [
-  {
-    channel: "WEB",
-    name: "Product guide",
-    question: "Can your team help us get started?",
-    answer: "Yes. Share the approved information and the agent can guide visitors from there.",
-  },
-  {
-    channel: "CHAT",
-    name: "Customer care",
-    question: "When are you available?",
-    answer: "The support schedule says Monday to Friday, 09:00–18:00.",
-  },
-  {
-    channel: "DM",
-    name: "Sales assistant",
-    question: "Can I speak with someone?",
-    answer: "Of course. I can capture your request for the team.",
-  },
-];
+import { useState } from "react";
+import { COPY, LOCALES, type Locale } from "./content";
 
 export function App() {
+  const [locale, setLocale] = useState<Locale>("en");
+  const copy = COPY[locale];
+
   return (
-    <main>
+    <main lang={locale}>
       <header className="site-header">
-        <a className="brand" href="#top" aria-label="AgentsFast home">
+        <a className="brand" href="#top" aria-label={`${copy.brand} home`}>
           <span className="brand-mark" aria-hidden="true">A</span>
-          AgentsFast
+          {copy.brand}
         </a>
         <nav aria-label="Main navigation">
-          <a href="#demo">Demo</a>
-          <a href="#how">How it works</a>
+          <a href="#demo">{copy.navDemo}</a>
+          <a href="#how">{copy.navHow}</a>
         </nav>
-        <a className="header-cta" href="#demo">See the product</a>
+        <div className="locale-switcher" aria-label={copy.languageLabel}>
+          {LOCALES.map((item) => (
+            <button
+              aria-label={item === "en" ? "English" : "한국어"}
+              aria-pressed={item === locale}
+              key={item}
+              lang={item}
+              onClick={() => setLocale(item)}
+              type="button"
+            >
+              {item.toUpperCase()}
+            </button>
+          ))}
+        </div>
+        <a className="header-cta" href="#demo">{copy.headerCta}</a>
       </header>
 
       <section className="hero" id="top">
         <div className="hero-copy">
-          <p className="eyebrow">Customer conversations, handled</p>
-          <h1>One agent for every customer question.</h1>
-          <p className="hero-lede">
-            Give one helpful agent the information your business has approved,
-            then meet customers wherever they start the conversation.
-          </p>
-          <a className="primary-cta" href="#demo">Explore the landing demo</a>
+          <p className="eyebrow">{copy.eyebrow}</p>
+          <h1>{copy.title.map((line) => <span key={line}>{line}</span>)}</h1>
+          <p className="hero-lede">{copy.lede}</p>
+          <a className="primary-cta" href="#demo">{copy.cta}</a>
         </div>
 
-        <div className="conversation-grid" id="demo" aria-label="Example customer conversations">
-          {conversations.map((conversation) => (
+        <div className="conversation-grid" id="demo" aria-label={copy.examplesLabel}>
+          {copy.conversations.map((conversation) => (
             <article className="conversation-card" key={conversation.name}>
               <div className="card-head">
                 <span>{conversation.channel}</span>
@@ -61,12 +57,12 @@ export function App() {
       </section>
 
       <section className="how" id="how">
-        <p className="eyebrow">A simple path</p>
-        <h2>From approved information to a useful conversation.</h2>
+        <p className="eyebrow">{copy.howEyebrow}</p>
+        <h2>{copy.howTitle}</h2>
         <ol>
-          <li><b>01</b><span>Collect the public facts customers need.</span></li>
-          <li><b>02</b><span>Shape the tone and test common questions.</span></li>
-          <li><b>03</b><span>Place the experience where visitors can reach it.</span></li>
+          {copy.steps.map((step, index) => (
+            <li key={step}><b>{String(index + 1).padStart(2, "0")}</b><span>{step}</span></li>
+          ))}
         </ol>
       </section>
     </main>

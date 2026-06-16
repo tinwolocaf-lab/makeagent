@@ -15,6 +15,11 @@
 html { scroll-behavior: smooth; }
 body { margin: 0; background: var(--paper); }
 a { color: inherit; }
+button, a { -webkit-tap-highlight-color: transparent; }
+button:focus-visible, a:focus-visible { outline: 3px solid color-mix(in srgb, var(--accent) 68%, transparent); outline-offset: 4px; }
+
+.skip-link { position: fixed; z-index: 100; top: 10px; left: 10px; padding: 10px 14px; border-radius: 999px; color: var(--paper); background: var(--ink); transform: translateY(-160%); transition: transform 160ms ease-out; }
+.skip-link:focus { transform: translateY(0); }
 
 .site-header {
   position: relative;
@@ -78,4 +83,5 @@ h1 span { display: block; }
 
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
+  *, *::before, *::after { scroll-behavior: auto !important; transition-duration: 0.01ms !important; animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; }
 }

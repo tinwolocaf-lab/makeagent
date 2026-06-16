@@ -6,13 +6,14 @@ export function App() {
   const copy = COPY[locale];
 
   return (
-    <main lang={locale}>
+    <div lang={locale}>
+      <a className="skip-link" href="#main-content">{copy.skipLabel}</a>
       <header className="site-header">
         <a className="brand" href="#top" aria-label={`${copy.brand} home`}>
           <span className="brand-mark" aria-hidden="true">A</span>
           {copy.brand}
         </a>
-        <nav aria-label="Main navigation">
+        <nav aria-label={copy.navLabel}>
           <a href="#demo">{copy.navDemo}</a>
           <a href="#how">{copy.navHow}</a>
         </nav>
@@ -33,6 +34,7 @@ export function App() {
         <a className="header-cta" href="#demo">{copy.headerCta}</a>
       </header>
 
+      <main id="main-content">
       <section className="hero" id="top">
         <div className="hero-copy">
           <p className="eyebrow">{copy.eyebrow}</p>
@@ -47,7 +49,7 @@ export function App() {
               <div className="card-head">
                 <span>{conversation.channel}</span>
                 <strong>{conversation.name}</strong>
-                <i aria-label="Online" />
+                <i aria-label={copy.onlineLabel} />
               </div>
               <p className="bubble bubble-customer">{conversation.question}</p>
               <p className="bubble bubble-agent">{conversation.answer}</p>
@@ -65,6 +67,7 @@ export function App() {
           ))}
         </ol>
       </section>
-    </main>
+      </main>
+    </div>
   );
 }

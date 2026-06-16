@@ -5,8 +5,11 @@ export type LandingCopy = {
   brand: string;
   navDemo: string;
   navHow: string;
+  navLabel: string;
   headerCta: string;
   languageLabel: string;
+  onlineLabel: string;
+  skipLabel: string;
   eyebrow: string;
   title: readonly [string, string, string];
   lede: string;
@@ -28,8 +31,11 @@ export const COPY: Record<Locale, LandingCopy> = {
     brand: "AgentsFast",
     navDemo: "Demo",
     navHow: "How it works",
+    navLabel: "Main navigation",
     headerCta: "See the product",
     languageLabel: "Interface language",
+    onlineLabel: "Online",
+    skipLabel: "Skip to main content",
     eyebrow: "Customer conversations, handled",
     title: ["One agent.", "Every channel.", "Ready for customers."],
     lede:
@@ -69,8 +75,11 @@ export const COPY: Record<Locale, LandingCopy> = {
     brand: "AgentsFast",
     navDemo: "데모",
     navHow: "이용 방법",
+    navLabel: "주요 탐색",
     headerCta: "제품 보기",
     languageLabel: "인터페이스 언어",
+    onlineLabel: "온라인",
+    skipLabel: "본문으로 건너뛰기",
     eyebrow: "고객 대화를 더 빠르게",
     title: ["하나의 에이전트.", "모든 채널.", "고객을 위한 준비."],
     lede:

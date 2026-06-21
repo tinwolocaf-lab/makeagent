@@ -28,7 +28,7 @@ export type LandingCopy = {
 
 export const COPY: Record<Locale, LandingCopy> = {
   en: {
-    brand: "AgentsFast",
+    brand: "Make Agent Fast",
     navDemo: "Demo",
     navHow: "How it works",
     navLabel: "Main navigation",
@@ -72,7 +72,7 @@ export const COPY: Record<Locale, LandingCopy> = {
     ],
   },
   ko: {
-    brand: "AgentsFast",
+    brand: "Make Agent Fast",
     navDemo: "데모",
     navHow: "이용 방법",
     navLabel: "주요 탐색",

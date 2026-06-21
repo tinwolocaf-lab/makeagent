@@ -1,4 +1,4 @@
-# AgentsFast public landing
+# Make Agent Fast public landing
 
 An early frontend-only landing-page implementation. It runs locally without a
 backend, account, credential, or external service.

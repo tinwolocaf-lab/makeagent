@@ -56,6 +56,9 @@ export function App() {
             </article>
           ))}
         </div>
+        <ul className="proof-strip" aria-label="Product principles">
+          {copy.proof.map((item) => <li key={item}>{item}</li>)}
+        </ul>
       </section>
 
       <section className="how" id="how">

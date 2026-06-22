@@ -15,6 +15,7 @@ export type LandingCopy = {
   lede: string;
   cta: string;
   examplesLabel: string;
+  proof: readonly string[];
   howEyebrow: string;
   howTitle: string;
   steps: readonly string[];
@@ -42,6 +43,7 @@ export const COPY: Record<Locale, LandingCopy> = {
       "Give one helpful agent the information your business has approved, then meet customers wherever they start the conversation.",
     cta: "Explore the landing demo",
     examplesLabel: "Example customer conversations",
+    proof: ["Approved knowledge", "One shared inbox", "Human handoff"],
     howEyebrow: "A simple path",
     howTitle: "From approved information to a useful conversation.",
     steps: [
@@ -86,6 +88,7 @@ export const COPY: Record<Locale, LandingCopy> = {
       "회사가 승인한 정보를 하나의 유용한 에이전트에 제공하고, 고객이 대화를 시작하는 모든 곳에서 만나 보세요.",
     cta: "랜딩 데모 살펴보기",
     examplesLabel: "고객 대화 예시",
+    proof: ["승인된 지식", "하나의 통합 받은편지함", "사람에게 연결"],
     howEyebrow: "간단한 과정",
     howTitle: "승인된 정보에서 유용한 대화까지.",
     steps: [

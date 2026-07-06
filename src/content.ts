@@ -1,6 +1,13 @@
 export const LOCALES = ["en", "ko"] as const;
 export type Locale = (typeof LOCALES)[number];
 
+export type ConversationCopy = {
+  channel: string;
+  name: string;
+  question: string;
+  answer: string;
+};
+
 export type LandingCopy = {
   brand: string;
   navDemo: string;
@@ -19,12 +26,7 @@ export type LandingCopy = {
   howEyebrow: string;
   howTitle: string;
   steps: readonly string[];
-  conversations: readonly {
-    channel: string;
-    name: string;
-    question: string;
-    answer: string;
-  }[];
+  conversations: readonly ConversationCopy[];
 };
 
 export const COPY: Record<Locale, LandingCopy> = {

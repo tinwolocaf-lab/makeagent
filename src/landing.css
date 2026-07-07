@@ -66,12 +66,14 @@ h1 span { display: block; }
 .hero-lede { max-width: 610px; margin: 28px auto 0; color: var(--soft-ink); font-size: clamp(17px, 2vw, 21px); line-height: 1.6; }
 .primary-cta { display: inline-flex; margin-top: 30px; padding: 15px 22px; font-weight: 700; }
 
-.conversation-grid { display: grid; width: min(1180px, 100%); grid-template-columns: repeat(3, 1fr); gap: 18px; margin: 88px auto 0; perspective: 1200px; }
+.conversation-grid { display: grid; width: min(1180px, 100%); grid-template-columns: repeat(6, 1fr); gap: 18px; margin: 88px auto 0; perspective: 1200px; }
 .conversation-card { min-height: 272px; padding: 18px; border: 1px solid var(--line); border-radius: 20px; background: var(--surface); box-shadow: 0 24px 70px rgb(22 36 31 / 8%); }
 .conversation-card { transition: transform 260ms cubic-bezier(.22, 1, .36, 1), box-shadow 260ms ease; }
-.conversation-card:nth-child(1) { transform: rotate(-2deg) translateY(24px); }
-.conversation-card:nth-child(2) { transform: translateY(-8px); }
-.conversation-card:nth-child(3) { transform: rotate(2deg) translateY(24px); }
+.conversation-card:nth-child(1) { grid-column: 1 / span 2; transform: rotate(-2deg) translateY(24px); }
+.conversation-card:nth-child(2) { grid-column: 3 / span 2; transform: translateY(-8px); }
+.conversation-card:nth-child(3) { grid-column: 5 / span 2; transform: rotate(2deg) translateY(24px); }
+.conversation-card:nth-child(4) { grid-column: 2 / span 2; transform: rotate(1deg) translateY(18px); }
+.conversation-card:nth-child(5) { grid-column: 4 / span 2; transform: rotate(-1deg) translateY(4px); }
 .conversation-card:hover { z-index: 2; transform: translateY(-7px); box-shadow: 0 34px 80px rgb(22 36 31 / 14%); }
 .card-head { display: grid; grid-template-columns: auto 1fr auto; align-items: center; gap: 9px; padding-bottom: 14px; border-bottom: 1px solid var(--line); font-size: 13px; }
 .card-head > span { color: #167a59; font-size: 10px; font-weight: 900; letter-spacing: .12em; }
@@ -92,7 +94,7 @@ h1 span { display: block; }
   .header-cta { margin-left: auto; }
   .hero { padding-top: 64px; }
   .conversation-grid { grid-template-columns: 1fr; margin-top: 64px; }
-  .conversation-card:nth-child(n) { transform: none; }
+  .conversation-card:nth-child(n) { grid-column: auto; transform: none; }
   .how { padding-block: 80px; }
   .how ol { grid-template-columns: 1fr; }
   .how li { min-height: 130px; }

@@ -73,6 +73,18 @@ export const COPY: Record<Locale, LandingCopy> = {
         question: "Can I speak with someone?",
         answer: "Of course. I can capture your request for the team.",
       },
+      {
+        channel: "EMAIL",
+        name: "Inbox guide",
+        question: "Where can I find the setup guide?",
+        answer: "I can point you to the right public guide and summarize the first steps.",
+      },
+      {
+        channel: "SOCIAL",
+        name: "Community helper",
+        question: "Is this available for small teams?",
+        answer: "Yes. The same focused experience can begin with a compact knowledge set.",
+      },
     ],
   },
   ko: {
@@ -116,6 +128,18 @@ export const COPY: Record<Locale, LandingCopy> = {
         name: "영업 안내",
         question: "담당자와 이야기할 수 있나요?",
         answer: "물론입니다. 팀에 전달할 요청을 남길 수 있습니다.",
+      },
+      {
+        channel: "이메일",
+        name: "받은편지함 안내",
+        question: "설정 안내서는 어디에서 찾을 수 있나요?",
+        answer: "알맞은 공개 안내서를 찾고 첫 단계를 요약해 드릴 수 있습니다.",
+      },
+      {
+        channel: "소셜",
+        name: "커뮤니티 도우미",
+        question: "소규모 팀도 사용할 수 있나요?",
+        answer: "네. 간결한 지식 모음으로 같은 경험을 시작할 수 있습니다.",
       },
     ],
   },

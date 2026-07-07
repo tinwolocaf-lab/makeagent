@@ -20,9 +20,6 @@ export function ChannelHero({ copy }: { copy: LandingCopy }) {
           />
         ))}
       </div>
-      <ul className="proof-strip" aria-label="Product principles">
-        {copy.proof.map((item) => <li key={item}>{item}</li>)}
-      </ul>
     </section>
   );
 }

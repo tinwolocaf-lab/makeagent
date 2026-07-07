@@ -8,7 +8,7 @@ export function ChannelCard({
   onlineLabel: string;
 }) {
   return (
-    <article className="conversation-card">
+    <article className="conversation-card" data-channel={conversation.channel.toLowerCase()}>
       <div className="card-head">
         <span>{conversation.channel}</span>
         <strong>{conversation.name}</strong>

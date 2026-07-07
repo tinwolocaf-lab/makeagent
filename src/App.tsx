@@ -4,10 +4,11 @@ import { ChannelHero } from "./components/ChannelHero";
 
 export function App() {
   const [locale, setLocale] = useState<Locale>("en");
+  const [theme, setTheme] = useState<"light" | "dark">("light");
   const copy = COPY[locale];
 
   return (
-    <div lang={locale}>
+    <div data-theme={theme} lang={locale}>
       <a className="skip-link" href="#main-content">{copy.skipLabel}</a>
       <header className="site-header">
         <a className="brand" href="#top" aria-label={`${copy.brand} home`}>
@@ -32,6 +33,14 @@ export function App() {
             </button>
           ))}
         </div>
+        <button
+          aria-label={copy.themeLabel}
+          className="theme-toggle"
+          onClick={() => setTheme((current) => current === "light" ? "dark" : "light")}
+          type="button"
+        >
+          <span aria-hidden="true">{theme === "light" ? "◐" : "◑"}</span>
+        </button>
         <a className="header-cta" href="#demo">{copy.headerCta}</a>
       </header>
 

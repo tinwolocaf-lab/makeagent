@@ -8,6 +8,12 @@ export type ConversationCopy = {
   answer: string;
 };
 
+export type PreviewCopy = {
+  prompt: string;
+  answer: string;
+  source: string;
+};
+
 export type LandingCopy = {
   brand: string;
   navDemo: string;
@@ -27,9 +33,7 @@ export type LandingCopy = {
   howTitle: string;
   journeyNote: string;
   previewLabel: string;
-  previewPrompt: string;
-  previewAnswer: string;
-  previewSource: string;
+  previews: readonly PreviewCopy[];
   steps: readonly string[];
   conversations: readonly ConversationCopy[];
 };
@@ -55,9 +59,23 @@ export const COPY: Record<Locale, LandingCopy> = {
     howTitle: "From approved information to a useful conversation.",
     journeyNote: "A focused three-step path keeps the experience understandable from the first source to the final answer.",
     previewLabel: "Answer preview",
-    previewPrompt: "What should I prepare before we begin?",
-    previewAnswer: "Start with the public information your customers ask for most often.",
-    previewSource: "Based on approved guide",
+    previews: [
+      {
+        prompt: "What should I prepare before we begin?",
+        answer: "Start with the public information your customers ask for most often.",
+        source: "Collect · Approved information",
+      },
+      {
+        prompt: "Can the answers sound like our team?",
+        answer: "Yes. Test the phrasing and adjust the tone before sharing the experience.",
+        source: "Shape · Voice preview",
+      },
+      {
+        prompt: "Where will visitors find it?",
+        answer: "Place a clear entry point on the customer-facing surface you choose.",
+        source: "Place · Landing preview",
+      },
+    ],
     steps: [
       "Collect the public facts customers need.",
       "Shape the tone and test common questions.",
@@ -117,9 +135,23 @@ export const COPY: Record<Locale, LandingCopy> = {
     howTitle: "승인된 정보에서 유용한 대화까지.",
     journeyNote: "간결한 세 단계 과정으로 첫 자료부터 최종 답변까지 쉽게 이해할 수 있습니다.",
     previewLabel: "답변 미리보기",
-    previewPrompt: "시작하기 전에 무엇을 준비해야 하나요?",
-    previewAnswer: "고객이 가장 자주 묻는 공개 정보부터 준비해 주세요.",
-    previewSource: "승인된 안내서 기반",
+    previews: [
+      {
+        prompt: "시작하기 전에 무엇을 준비해야 하나요?",
+        answer: "고객이 가장 자주 묻는 공개 정보부터 준비해 주세요.",
+        source: "수집 · 승인된 정보",
+      },
+      {
+        prompt: "우리 팀처럼 답변하게 할 수 있나요?",
+        answer: "네. 경험을 공개하기 전에 표현을 시험하고 말투를 조정할 수 있습니다.",
+        source: "구성 · 말투 미리보기",
+      },
+      {
+        prompt: "방문자는 어디에서 찾을 수 있나요?",
+        answer: "선택한 고객 접점에 찾기 쉬운 진입점을 배치하세요.",
+        source: "배치 · 랜딩 미리보기",
+      },
+    ],
     steps: [
       "고객에게 필요한 공개 정보를 모읍니다.",
       "말투를 정하고 자주 묻는 질문을 시험합니다.",

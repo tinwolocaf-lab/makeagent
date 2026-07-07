@@ -88,8 +88,10 @@ h1 span { display: block; }
 .journey-heading > p { margin: 0; color: var(--soft-ink); line-height: 1.7; }
 .journey-layout { display: grid; grid-template-columns: minmax(0, 1fr) minmax(320px, .8fr); gap: 72px; margin-top: 76px; }
 .journey-steps { display: grid; gap: 0; margin: 0; padding: 0; list-style: none; }
-.journey-steps li { display: grid; grid-template-columns: 48px 1fr; gap: 20px; padding: 24px 0; border-top: 1px solid var(--line); }
+.journey-steps li { border-top: 1px solid var(--line); }
 .journey-steps li:last-child { border-bottom: 1px solid var(--line); }
+.journey-steps button { display: grid; width: 100%; grid-template-columns: 48px 1fr; gap: 20px; padding: 24px 0; border: 0; color: var(--soft-ink); background: transparent; cursor: pointer; font: inherit; text-align: left; transition: color 180ms ease, padding-left 180ms ease; }
+.journey-steps li.is-active button { padding-left: 10px; color: var(--ink); }
 .journey-steps b { color: #167a59; font-size: 12px; letter-spacing: .14em; }
 .journey-steps span { max-width: 32ch; font-size: 20px; line-height: 1.35; }
 .journey-preview { align-self: start; overflow: hidden; border: 1px solid var(--line); border-radius: 24px; background: var(--paper); box-shadow: 0 24px 70px rgb(22 36 31 / 8%); }
@@ -97,10 +99,16 @@ h1 span { display: block; }
 .preview-bar > span { width: 7px; height: 7px; border-radius: 50%; background: var(--line); }
 .preview-bar small { margin-left: auto; color: var(--soft-ink); }
 .preview-body { display: grid; min-height: 300px; align-content: center; gap: 15px; padding: 28px; }
+.preview-body { animation: preview-in 260ms cubic-bezier(.22, 1, .36, 1); }
 .preview-prompt, .preview-answer { max-width: 88%; margin: 0; padding: 12px 14px; border-radius: 16px; line-height: 1.5; }
 .preview-prompt { justify-self: end; color: var(--surface); background: var(--ink); }
 .preview-answer { background: color-mix(in srgb, var(--accent) 18%, var(--surface)); }
 .preview-source { color: var(--soft-ink); font-size: 11px; letter-spacing: .06em; text-transform: uppercase; }
+
+@keyframes preview-in {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
 
 @media (max-width: 760px) {
   .site-header nav { display: none; }

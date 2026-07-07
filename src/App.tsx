@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { COPY, LOCALES, type Locale } from "./content";
 import { ChannelHero } from "./components/ChannelHero";
+import { Journey } from "./components/Journey";
 
 export function App() {
   const [locale, setLocale] = useState<Locale>("en");
@@ -47,15 +48,7 @@ export function App() {
       <main id="main-content">
       <ChannelHero copy={copy} />
 
-      <section className="how" id="how">
-        <p className="eyebrow">{copy.howEyebrow}</p>
-        <h2>{copy.howTitle}</h2>
-        <ol>
-          {copy.steps.map((step, index) => (
-            <li key={step}><b>{String(index + 1).padStart(2, "0")}</b><span>{step}</span></li>
-          ))}
-        </ol>
-      </section>
+      <Journey copy={copy} />
       </main>
     </div>
   );

@@ -25,6 +25,11 @@ export type LandingCopy = {
   examplesLabel: string;
   howEyebrow: string;
   howTitle: string;
+  journeyNote: string;
+  previewLabel: string;
+  previewPrompt: string;
+  previewAnswer: string;
+  previewSource: string;
   steps: readonly string[];
   conversations: readonly ConversationCopy[];
 };
@@ -48,6 +53,11 @@ export const COPY: Record<Locale, LandingCopy> = {
     examplesLabel: "Example customer conversations",
     howEyebrow: "A simple path",
     howTitle: "From approved information to a useful conversation.",
+    journeyNote: "A focused three-step path keeps the experience understandable from the first source to the final answer.",
+    previewLabel: "Answer preview",
+    previewPrompt: "What should I prepare before we begin?",
+    previewAnswer: "Start with the public information your customers ask for most often.",
+    previewSource: "Based on approved guide",
     steps: [
       "Collect the public facts customers need.",
       "Shape the tone and test common questions.",
@@ -105,6 +115,11 @@ export const COPY: Record<Locale, LandingCopy> = {
     examplesLabel: "고객 대화 예시",
     howEyebrow: "간단한 과정",
     howTitle: "승인된 정보에서 유용한 대화까지.",
+    journeyNote: "간결한 세 단계 과정으로 첫 자료부터 최종 답변까지 쉽게 이해할 수 있습니다.",
+    previewLabel: "답변 미리보기",
+    previewPrompt: "시작하기 전에 무엇을 준비해야 하나요?",
+    previewAnswer: "고객이 가장 자주 묻는 공개 정보부터 준비해 주세요.",
+    previewSource: "승인된 안내서 기반",
     steps: [
       "고객에게 필요한 공개 정보를 모읍니다.",
       "말투를 정하고 자주 묻는 질문을 시험합니다.",

@@ -1,5 +1,11 @@
-export const LOCALES = ["en", "ko"] as const;
+export const LOCALES = ["en", "ko", "uz"] as const;
 export type Locale = (typeof LOCALES)[number];
+
+export const LANGUAGE_NAMES: Record<Locale, string> = {
+  en: "English",
+  ko: "한국어",
+  uz: "O‘zbekcha",
+};
 
 export type ConversationCopy = {
   channel: string;
@@ -187,6 +193,81 @@ export const COPY: Record<Locale, LandingCopy> = {
         name: "커뮤니티 도우미",
         question: "소규모 팀도 사용할 수 있나요?",
         answer: "네. 간결한 지식 모음으로 같은 경험을 시작할 수 있습니다.",
+      },
+    ],
+  },
+  uz: {
+    brand: "Make Agent Fast",
+    navDemo: "Demo",
+    navHow: "Qanday ishlaydi",
+    navLabel: "Asosiy navigatsiya",
+    headerCta: "Mahsulotni ko‘rish",
+    languageLabel: "Interfeys tili",
+    themeLabel: "Rang mavzusini o‘zgartirish",
+    onlineLabel: "Onlayn",
+    skipLabel: "Asosiy qismga o‘tish",
+    eyebrow: "Mijozlar bilan suhbatlar — bir joyda",
+    title: ["Bitta agent.", "Barcha kanallar.", "Mijozlarga tayyor."],
+    lede:
+      "Biznesingiz tasdiqlagan ma’lumotlarni bitta yordamchi agentga bering va mijoz suhbatni qayerda boshlamasin, o‘sha yerda javob bering.",
+    cta: "Landing demosini ko‘rish",
+    examplesLabel: "Mijozlar bilan suhbat namunalari",
+    howEyebrow: "Oddiy jarayon",
+    howTitle: "Tasdiqlangan ma’lumotdan foydali suhbatgacha.",
+    journeyNote: "Uch bosqichli aniq yo‘l birinchi manbadan yakuniy javobgacha bo‘lgan jarayonni tushunarli qiladi.",
+    previewLabel: "Javob namunasi",
+    previews: [
+      {
+        prompt: "Boshlashdan oldin nimalarni tayyorlashim kerak?",
+        answer: "Avval mijozlaringiz eng ko‘p so‘raydigan ochiq ma’lumotlarni to‘plang.",
+        source: "To‘plash · Tasdiqlangan ma’lumot",
+      },
+      {
+        prompt: "Javoblar jamoamiz uslubida bo‘lishi mumkinmi?",
+        answer: "Ha. Tajribani ulashishdan oldin matnni sinab, ohangni moslashingiz mumkin.",
+        source: "Shakllantirish · Ohang namunasi",
+      },
+      {
+        prompt: "Tashrif buyuruvchilar uni qayerdan topadi?",
+        answer: "Tanlagan mijozlar kanalida ko‘rinadigan kirish nuqtasini joylashtiring.",
+        source: "Joylashtirish · Landing namunasi",
+      },
+    ],
+    steps: [
+      "Mijozlarga kerak bo‘ladigan ochiq ma’lumotlarni to‘plang.",
+      "Ohangni belgilang va ko‘p beriladigan savollarni sinang.",
+      "Tashrif buyuruvchilar oson topadigan joyga tajribani joylashtiring.",
+    ],
+    conversations: [
+      {
+        channel: "VEB",
+        name: "Mahsulot yordamchisi",
+        question: "Boshlashimizga yordam bera olasizmi?",
+        answer: "Ha. Tasdiqlangan ma’lumotlarni ulashing, agent tashrif buyuruvchilarni yo‘naltiradi.",
+      },
+      {
+        channel: "CHAT",
+        name: "Mijozlarga yordam",
+        question: "Qachon ishlaysiz?",
+        answer: "Yordam vaqti dushanbadan jumagacha, 09:00–18:00.",
+      },
+      {
+        channel: "DM",
+        name: "Savdo yordamchisi",
+        question: "Mutaxassis bilan gaplashsam bo‘ladimi?",
+        answer: "Albatta. Jamoaga yetkazish uchun so‘rovingizni yozib olaman.",
+      },
+      {
+        channel: "EMAIL",
+        name: "Pochta yordamchisi",
+        question: "Sozlash qo‘llanmasini qayerdan topsam bo‘ladi?",
+        answer: "Kerakli ochiq qo‘llanmani topib, dastlabki qadamlarni qisqacha aytib beraman.",
+      },
+      {
+        channel: "IJTIMOIY",
+        name: "Hamjamiyat yordamchisi",
+        question: "Bu kichik jamoalar uchun ham mosmi?",
+        answer: "Ha. Xuddi shu ixcham tajribani kichik ma’lumotlar to‘plamidan boshlash mumkin.",
       },
     ],
   },

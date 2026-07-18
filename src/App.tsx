@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { COPY, LOCALES, type Locale } from "./content";
+import { COPY, LANGUAGE_NAMES, LOCALES, type Locale } from "./content";
 import { ChannelHero } from "./components/ChannelHero";
 import { Journey } from "./components/Journey";
 
@@ -23,7 +23,7 @@ export function App() {
         <div className="locale-switcher" aria-label={copy.languageLabel}>
           {LOCALES.map((item) => (
             <button
-              aria-label={item === "en" ? "English" : "한국어"}
+              aria-label={LANGUAGE_NAMES[item]}
               aria-pressed={item === locale}
               key={item}
               lang={item}

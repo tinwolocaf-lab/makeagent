@@ -29,9 +29,16 @@ export function Journey({ copy }: { copy: LandingCopy }) {
 
         <aside className="journey-preview" aria-label={copy.previewLabel}>
           <div className="preview-bar">
-            <span aria-hidden="true" />
-            <span aria-hidden="true" />
-            <span aria-hidden="true" />
+            <div aria-hidden="true" className="window-dots">
+              <span />
+              <span />
+              <span />
+            </div>
+            <div aria-hidden="true" className="journey-progress">
+              {copy.steps.map((step, index) => (
+                <span className={index === activeStep ? "is-active" : undefined} key={step} />
+              ))}
+            </div>
             <small>{copy.previewLabel}</small>
           </div>
           <div className="preview-body" key={preview.prompt}>

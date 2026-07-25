@@ -28,6 +28,8 @@ export type LandingCopy = {
   headerCta: string;
   languageLabel: string;
   themeLabel: string;
+  openMenuLabel: string;
+  closeMenuLabel: string;
   onlineLabel: string;
   skipLabel: string;
   eyebrow: string;
@@ -53,6 +55,8 @@ export const COPY: Record<Locale, LandingCopy> = {
     headerCta: "See the product",
     languageLabel: "Interface language",
     themeLabel: "Change color theme",
+    openMenuLabel: "Open navigation",
+    closeMenuLabel: "Close navigation",
     onlineLabel: "Online",
     skipLabel: "Skip to main content",
     eyebrow: "Customer conversations, handled",
@@ -129,6 +133,8 @@ export const COPY: Record<Locale, LandingCopy> = {
     headerCta: "제품 보기",
     languageLabel: "인터페이스 언어",
     themeLabel: "색상 테마 변경",
+    openMenuLabel: "탐색 메뉴 열기",
+    closeMenuLabel: "탐색 메뉴 닫기",
     onlineLabel: "온라인",
     skipLabel: "본문으로 건너뛰기",
     eyebrow: "고객 대화를 더 빠르게",
@@ -204,6 +210,8 @@ export const COPY: Record<Locale, LandingCopy> = {
     headerCta: "Mahsulotni ko‘rish",
     languageLabel: "Interfeys tili",
     themeLabel: "Rang mavzusini o‘zgartirish",
+    openMenuLabel: "Navigatsiyani ochish",
+    closeMenuLabel: "Navigatsiyani yopish",
     onlineLabel: "Onlayn",
     skipLabel: "Asosiy qismga o‘tish",
     eyebrow: "Mijozlar bilan suhbatlar — bir joyda",

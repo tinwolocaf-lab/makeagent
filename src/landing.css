@@ -111,6 +111,22 @@ h1 span { display: block; }
 .preview-answer { background: color-mix(in srgb, var(--accent) 18%, var(--surface)); }
 .preview-source { color: var(--soft-ink); font-size: 11px; letter-spacing: .06em; text-transform: uppercase; }
 
+.roles { display: grid; grid-template-columns: minmax(0, .8fr) minmax(420px, 1.2fr); gap: 90px; padding: 118px max(20px, calc((100vw - 1180px) / 2)); border-top: 1px solid var(--line); }
+.roles-copy { align-self: center; }
+.roles h2 { font-size: clamp(42px, 5vw, 72px); line-height: 1; }
+.roles-copy > p:last-child { max-width: 48ch; margin: 28px 0 0; color: var(--soft-ink); line-height: 1.7; }
+.role-workspace { overflow: hidden; border: 1px solid var(--line); border-radius: 26px; background: var(--surface); box-shadow: 0 24px 70px rgb(22 36 31 / 8%); }
+.role-tabs { display: grid; grid-template-columns: repeat(3, 1fr); padding: 7px; border-bottom: 1px solid var(--line); }
+.role-tabs button { min-height: 42px; border: 0; border-radius: 999px; color: var(--soft-ink); background: transparent; cursor: pointer; font: inherit; font-size: 13px; font-weight: 700; }
+.role-tabs button[aria-selected="true"] { color: var(--paper); background: var(--ink); }
+.role-preview { min-height: 410px; padding: clamp(28px, 5vw, 54px); animation: preview-in 260ms cubic-bezier(.22, 1, .36, 1); }
+.role-preview > span { color: #167a59; font-size: 11px; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; }
+.role-preview h3 { max-width: 18ch; margin: 22px 0 16px; font-family: Georgia, "Times New Roman", serif; font-size: clamp(30px, 4vw, 46px); font-weight: 500; letter-spacing: -.04em; line-height: 1.05; }
+.role-preview > p { max-width: 48ch; color: var(--soft-ink); line-height: 1.65; }
+.role-preview ul { display: grid; gap: 12px; margin: 30px 0 0; padding: 0; list-style: none; }
+.role-preview li { display: flex; align-items: center; gap: 12px; }
+.role-preview li::before { width: 7px; height: 7px; border-radius: 50%; background: var(--accent); content: ""; }
+
 @keyframes preview-in {
   from { opacity: 0; transform: translateY(8px); }
   to { opacity: 1; transform: translateY(0); }
@@ -132,6 +148,9 @@ h1 span { display: block; }
   .journey { padding-block: 80px; }
   .journey-heading, .journey-layout { grid-template-columns: 1fr; gap: 38px; }
   .journey-layout { margin-top: 52px; }
+  .roles { grid-template-columns: 1fr; gap: 48px; padding-block: 80px; }
+  .role-tabs { overflow-x: auto; }
+  .role-preview { min-height: 360px; }
 }
 
 @media (prefers-reduced-motion: reduce) {

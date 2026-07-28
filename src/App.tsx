@@ -3,6 +3,7 @@ import { COPY, type Locale } from "./content";
 import { ChannelHero } from "./components/ChannelHero";
 import { Header } from "./components/Header";
 import { Journey } from "./components/Journey";
+import { RoleSwitcher } from "./components/RoleSwitcher";
 
 export function App() {
   const [locale, setLocale] = useState<Locale>("en");
@@ -24,6 +25,7 @@ export function App() {
       <ChannelHero copy={copy} />
 
       <Journey copy={copy} />
+      <RoleSwitcher copy={copy} />
       </main>
     </div>
   );

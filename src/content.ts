@@ -20,6 +20,14 @@ export type PreviewCopy = {
   source: string;
 };
 
+export type RoleCopy = {
+  name: string;
+  kicker: string;
+  title: string;
+  description: string;
+  tasks: readonly string[];
+};
+
 export type LandingCopy = {
   brand: string;
   navDemo: string;
@@ -42,6 +50,11 @@ export type LandingCopy = {
   journeyNote: string;
   previewLabel: string;
   previews: readonly PreviewCopy[];
+  rolesEyebrow: string;
+  rolesTitle: string;
+  rolesNote: string;
+  rolesLabel: string;
+  roles: readonly RoleCopy[];
   steps: readonly string[];
   conversations: readonly ConversationCopy[];
 };
@@ -84,6 +97,33 @@ export const COPY: Record<Locale, LandingCopy> = {
         prompt: "Where will visitors find it?",
         answer: "Place a clear entry point on the customer-facing surface you choose.",
         source: "Place · Landing preview",
+      },
+    ],
+    rolesEyebrow: "Built around the work",
+    rolesTitle: "One clear experience, shaped for the conversation.",
+    rolesNote: "Switch between a few common roles to see how the same landing experience can emphasize different customer needs.",
+    rolesLabel: "Example agent roles",
+    roles: [
+      {
+        name: "Support",
+        kicker: "Clear and reassuring",
+        title: "Help customers find the next useful answer.",
+        description: "Organize approved guidance so common questions begin with a consistent response.",
+        tasks: ["Explain public policies", "Point to useful guides", "Prepare a handoff summary"],
+      },
+      {
+        name: "Sales",
+        kicker: "Focused and helpful",
+        title: "Turn early questions into a better introduction.",
+        description: "Present the right public product context without overwhelming a first-time visitor.",
+        tasks: ["Clarify available options", "Answer common fit questions", "Capture the next request"],
+      },
+      {
+        name: "Operations",
+        kicker: "Direct and organized",
+        title: "Keep routine information easy to reach.",
+        description: "Bring frequently requested public details into a single, approachable conversation.",
+        tasks: ["Share working hours", "Explain basic processes", "Guide visitors to resources"],
       },
     ],
     steps: [
@@ -164,6 +204,33 @@ export const COPY: Record<Locale, LandingCopy> = {
         source: "배치 · 랜딩 미리보기",
       },
     ],
+    rolesEyebrow: "업무에 맞춘 구성",
+    rolesTitle: "하나의 명확한 경험, 대화에 맞춘 역할.",
+    rolesNote: "몇 가지 일반적인 역할을 전환하며 같은 랜딩 경험이 서로 다른 고객 요구를 어떻게 강조하는지 확인해 보세요.",
+    rolesLabel: "에이전트 역할 예시",
+    roles: [
+      {
+        name: "고객 지원",
+        kicker: "명확하고 안심되는 안내",
+        title: "고객이 다음으로 필요한 답을 찾도록 돕습니다.",
+        description: "승인된 안내를 정리하여 자주 묻는 질문에 일관된 답변을 제공합니다.",
+        tasks: ["공개 정책 설명", "유용한 안내서 연결", "담당자 전달 요약 준비"],
+      },
+      {
+        name: "영업",
+        kicker: "집중적이고 유용한 안내",
+        title: "첫 질문을 더 나은 소개로 이어갑니다.",
+        description: "처음 방문한 사람에게 부담을 주지 않으면서 필요한 공개 제품 정보를 보여 줍니다.",
+        tasks: ["이용 가능한 선택지 설명", "적합성 관련 질문 답변", "다음 요청 접수"],
+      },
+      {
+        name: "운영",
+        kicker: "직접적이고 체계적인 안내",
+        title: "일상적인 정보를 쉽게 찾게 합니다.",
+        description: "자주 요청되는 공개 정보를 하나의 친근한 대화로 정리합니다.",
+        tasks: ["운영 시간 안내", "기본 절차 설명", "관련 자료로 안내"],
+      },
+    ],
     steps: [
       "고객에게 필요한 공개 정보를 모읍니다.",
       "말투를 정하고 자주 묻는 질문을 시험합니다.",
@@ -239,6 +306,33 @@ export const COPY: Record<Locale, LandingCopy> = {
         prompt: "Tashrif buyuruvchilar uni qayerdan topadi?",
         answer: "Tanlagan mijozlar kanalida ko‘rinadigan kirish nuqtasini joylashtiring.",
         source: "Joylashtirish · Landing namunasi",
+      },
+    ],
+    rolesEyebrow: "Ish jarayoniga mos",
+    rolesTitle: "Bitta aniq tajriba — har bir suhbatga mos rol.",
+    rolesNote: "Bir nechta odatiy rolni almashtirib, ayni landing tajribasi mijozlarning turli ehtiyojlarini qanday ajratib ko‘rsatishini ko‘ring.",
+    rolesLabel: "Agent rollari namunalari",
+    roles: [
+      {
+        name: "Yordam",
+        kicker: "Aniq va xotirjam",
+        title: "Mijozga keyingi foydali javobni topishga yordam bering.",
+        description: "Tasdiqlangan qo‘llanmalarni tartiblab, ko‘p beriladigan savollarga izchil javob bering.",
+        tasks: ["Ochiq qoidalarni tushuntirish", "Foydali qo‘llanmaga yo‘naltirish", "Mutaxassis uchun xulosa tayyorlash"],
+      },
+      {
+        name: "Savdo",
+        kicker: "Maqsadli va foydali",
+        title: "Dastlabki savollarni yaxshiroq tanishuvga aylantiring.",
+        description: "Yangi tashrif buyuruvchini ortiqcha ma’lumot bilan chalg‘itmasdan, kerakli ochiq mahsulot ma’lumotini ko‘rsating.",
+        tasks: ["Mavjud variantlarni tushuntirish", "Moslik savollariga javob berish", "Keyingi so‘rovni yozib olish"],
+      },
+      {
+        name: "Jarayonlar",
+        kicker: "To‘g‘ridan-to‘g‘ri va tartibli",
+        title: "Kundalik ma’lumotlarni oson topiladigan qiling.",
+        description: "Ko‘p so‘raladigan ochiq ma’lumotlarni bitta qulay suhbatga jamlang.",
+        tasks: ["Ish vaqtini ko‘rsatish", "Asosiy jarayonlarni tushuntirish", "Kerakli manbaga yo‘naltirish"],
       },
     ],
     steps: [

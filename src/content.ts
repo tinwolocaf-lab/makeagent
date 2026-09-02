@@ -28,10 +28,16 @@ export type RoleCopy = {
   tasks: readonly string[];
 };
 
+export type FAQCopy = {
+  question: string;
+  answer: string;
+};
+
 export type LandingCopy = {
   brand: string;
   navDemo: string;
   navHow: string;
+  navFaq: string;
   navLabel: string;
   headerCta: string;
   languageLabel: string;
@@ -55,6 +61,11 @@ export type LandingCopy = {
   rolesNote: string;
   rolesLabel: string;
   roles: readonly RoleCopy[];
+  faqEyebrow: string;
+  faqTitle: string;
+  faqs: readonly FAQCopy[];
+  footerNote: string;
+  backToTop: string;
   steps: readonly string[];
   conversations: readonly ConversationCopy[];
 };
@@ -64,6 +75,7 @@ export const COPY: Record<Locale, LandingCopy> = {
     brand: "Make Agent Fast",
     navDemo: "Demo",
     navHow: "How it works",
+    navFaq: "FAQ",
     navLabel: "Main navigation",
     headerCta: "See the product",
     languageLabel: "Interface language",
@@ -72,11 +84,10 @@ export const COPY: Record<Locale, LandingCopy> = {
     closeMenuLabel: "Close navigation",
     onlineLabel: "Online",
     skipLabel: "Skip to main content",
-    eyebrow: "Customer conversations, handled",
-    title: ["One agent.", "Every channel.", "Ready for customers."],
-    lede:
-      "Give one helpful agent the information your business has approved, then meet customers wherever they start the conversation.",
-    cta: "Explore the landing demo",
+    eyebrow: "Customer service, made simpler",
+    title: ["ONE AGENT.", "EVERY CHANNEL.", "TALKS WITH YOUR CUSTOMERS."],
+    lede: "Make Agent Fast builds your customer service agent in minutes — no code.",
+    cta: "Explore the product",
     examplesLabel: "Example customer conversations",
     howEyebrow: "A simple path",
     howTitle: "From approved information to a useful conversation.",
@@ -126,6 +137,24 @@ export const COPY: Record<Locale, LandingCopy> = {
         tasks: ["Share working hours", "Explain basic processes", "Guide visitors to resources"],
       },
     ],
+    faqEyebrow: "Good to know",
+    faqTitle: "A focused preview, with clear boundaries.",
+    faqs: [
+      {
+        question: "What does this public page include?",
+        answer: "A working, frontend-only presentation of the Make Agent Fast landing experience and its local interface states.",
+      },
+      {
+        question: "Does this demo connect to a live service?",
+        answer: "No. Its examples, role tabs, language controls, and theme controls all run locally in the browser.",
+      },
+      {
+        question: "Is the complete product available here?",
+        answer: "No. The production platform and its proprietary systems are maintained separately.",
+      },
+    ],
+    footerNote: "A public landing-page excerpt of Make Agent Fast.",
+    backToTop: "Back to top",
     steps: [
       "Collect the public facts customers need.",
       "Shape the tone and test common questions.",
@@ -169,6 +198,7 @@ export const COPY: Record<Locale, LandingCopy> = {
     brand: "Make Agent Fast",
     navDemo: "데모",
     navHow: "이용 방법",
+    navFaq: "자주 묻는 질문",
     navLabel: "주요 탐색",
     headerCta: "제품 보기",
     languageLabel: "인터페이스 언어",
@@ -177,11 +207,10 @@ export const COPY: Record<Locale, LandingCopy> = {
     closeMenuLabel: "탐색 메뉴 닫기",
     onlineLabel: "온라인",
     skipLabel: "본문으로 건너뛰기",
-    eyebrow: "고객 대화를 더 빠르게",
-    title: ["하나의 에이전트.", "모든 채널.", "고객을 위한 준비."],
-    lede:
-      "회사가 승인한 정보를 하나의 유용한 에이전트에 제공하고, 고객이 대화를 시작하는 모든 곳에서 만나 보세요.",
-    cta: "랜딩 데모 살펴보기",
+    eyebrow: "더 간결해진 고객 서비스",
+    title: ["하나의 에이전트.", "모든 채널.", "고객과 대화합니다."],
+    lede: "Make Agent Fast는 코딩 없이 몇 분 만에 고객 서비스 에이전트를 구성합니다.",
+    cta: "제품 살펴보기",
     examplesLabel: "고객 대화 예시",
     howEyebrow: "간단한 과정",
     howTitle: "승인된 정보에서 유용한 대화까지.",
@@ -231,6 +260,24 @@ export const COPY: Record<Locale, LandingCopy> = {
         tasks: ["운영 시간 안내", "기본 절차 설명", "관련 자료로 안내"],
       },
     ],
+    faqEyebrow: "알아두면 좋은 점",
+    faqTitle: "범위가 명확한 집중된 미리보기.",
+    faqs: [
+      {
+        question: "이 공개 페이지에는 무엇이 포함되어 있나요?",
+        answer: "Make Agent Fast 랜딩 경험과 로컬 인터페이스 상태를 보여 주는 실제 프런트엔드 전용 코드가 포함되어 있습니다.",
+      },
+      {
+        question: "이 데모는 실제 서비스에 연결되나요?",
+        answer: "아니요. 대화 예시, 역할 탭, 언어 및 테마 설정은 모두 브라우저 안에서만 작동합니다.",
+      },
+      {
+        question: "전체 제품이 여기에 공개되어 있나요?",
+        answer: "아니요. 프로덕션 플랫폼과 독점 시스템은 별도로 관리됩니다.",
+      },
+    ],
+    footerNote: "Make Agent Fast의 공개 랜딩 페이지 일부입니다.",
+    backToTop: "맨 위로",
     steps: [
       "고객에게 필요한 공개 정보를 모읍니다.",
       "말투를 정하고 자주 묻는 질문을 시험합니다.",
@@ -273,6 +320,7 @@ export const COPY: Record<Locale, LandingCopy> = {
     brand: "Make Agent Fast",
     navDemo: "Demo",
     navHow: "Qanday ishlaydi",
+    navFaq: "Savol-javob",
     navLabel: "Asosiy navigatsiya",
     headerCta: "Mahsulotni ko‘rish",
     languageLabel: "Interfeys tili",
@@ -281,11 +329,10 @@ export const COPY: Record<Locale, LandingCopy> = {
     closeMenuLabel: "Navigatsiyani yopish",
     onlineLabel: "Onlayn",
     skipLabel: "Asosiy qismga o‘tish",
-    eyebrow: "Mijozlar bilan suhbatlar — bir joyda",
-    title: ["Bitta agent.", "Barcha kanallar.", "Mijozlarga tayyor."],
-    lede:
-      "Biznesingiz tasdiqlagan ma’lumotlarni bitta yordamchi agentga bering va mijoz suhbatni qayerda boshlamasin, o‘sha yerda javob bering.",
-    cta: "Landing demosini ko‘rish",
+    eyebrow: "Mijozlarga xizmat ko‘rsatish — yanada sodda",
+    title: ["BITTA AGENT.", "BARCHA KANALLAR.", "MIJOZLARINGIZ BILAN SUHBATLASHADI."],
+    lede: "Make Agent Fast bir necha daqiqada, kod yozmasdan mijozlarga xizmat ko‘rsatish agentini yaratadi.",
+    cta: "Mahsulotni ko‘rish",
     examplesLabel: "Mijozlar bilan suhbat namunalari",
     howEyebrow: "Oddiy jarayon",
     howTitle: "Tasdiqlangan ma’lumotdan foydali suhbatgacha.",
@@ -335,6 +382,24 @@ export const COPY: Record<Locale, LandingCopy> = {
         tasks: ["Ish vaqtini ko‘rsatish", "Asosiy jarayonlarni tushuntirish", "Kerakli manbaga yo‘naltirish"],
       },
     ],
+    faqEyebrow: "Bilish foydali",
+    faqTitle: "Chegaralari aniq, yo‘naltirilgan namuna.",
+    faqs: [
+      {
+        question: "Ushbu ochiq sahifada nimalar bor?",
+        answer: "Make Agent Fast landing tajribasi va uning lokal interfeys holatlarini ko‘rsatadigan haqiqiy, faqat frontenddan iborat kod mavjud.",
+      },
+      {
+        question: "Bu demo haqiqiy xizmatga ulanadimi?",
+        answer: "Yo‘q. Suhbat namunalari, rol tugmalari, til va mavzu sozlamalari faqat brauzer ichida ishlaydi.",
+      },
+      {
+        question: "To‘liq mahsulot shu yerda ochiqmi?",
+        answer: "Yo‘q. Ishlab turgan platforma va uning mualliflikka tegishli tizimlari alohida saqlanadi.",
+      },
+    ],
+    footerNote: "Make Agent Fast ochiq landing sahifasining bir qismi.",
+    backToTop: "Yuqoriga qaytish",
     steps: [
       "Mijozlarga kerak bo‘ladigan ochiq ma’lumotlarni to‘plang.",
       "Ohangni belgilang va ko‘p beriladigan savollarni sinang.",

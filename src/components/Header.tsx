@@ -5,6 +5,7 @@ import {
   type LandingCopy,
   type Locale,
 } from "../content";
+import { Logo } from "./Logo";
 
 type HeaderProps = {
   copy: LandingCopy;
@@ -26,8 +27,7 @@ export function Header({
   return (
     <header className="site-header">
       <a className="brand" href="#top" aria-label={`${copy.brand} home`}>
-        <span className="brand-mark" aria-hidden="true">A</span>
-        {copy.brand}
+        <Logo label={copy.brand} />
       </a>
 
       <button
@@ -44,6 +44,7 @@ export function Header({
         <nav aria-label={copy.navLabel}>
           <a href="#demo" onClick={() => setMenuOpen(false)}>{copy.navDemo}</a>
           <a href="#how" onClick={() => setMenuOpen(false)}>{copy.navHow}</a>
+          <a href="#faq" onClick={() => setMenuOpen(false)}>{copy.navFaq}</a>
         </nav>
         <div className="locale-switcher" aria-label={copy.languageLabel}>
           {LOCALES.map((item) => (

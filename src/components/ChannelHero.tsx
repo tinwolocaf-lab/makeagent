@@ -11,7 +11,7 @@ export function ChannelHero({ copy }: { copy: LandingCopy }) {
         <a className="primary-cta" href="#demo">{copy.cta}</a>
       </div>
 
-      <div className="conversation-grid" id="demo" aria-label={copy.examplesLabel}>
+      <div className="conversation-grid" id="demo" aria-label={copy.examplesLabel} role="region">
         {copy.conversations.map((conversation) => (
           <ChannelCard
             conversation={conversation}

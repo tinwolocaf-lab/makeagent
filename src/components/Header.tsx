@@ -26,12 +26,13 @@ export function Header({
 
   return (
     <header className="site-header">
-      <a className="brand" href="#top" aria-label={`${copy.brand} home`}>
+      <a className="brand" href="#top" aria-label={copy.homeLabel}>
         <Logo label={copy.brand} />
       </a>
 
       <button
         aria-expanded={menuOpen}
+        aria-controls="header-controls"
         aria-label={menuOpen ? copy.closeMenuLabel : copy.openMenuLabel}
         className="menu-toggle"
         onClick={() => setMenuOpen((open) => !open)}
@@ -40,13 +41,13 @@ export function Header({
         <span aria-hidden="true">{menuOpen ? "×" : "="}</span>
       </button>
 
-      <div className={`header-controls${menuOpen ? " is-open" : ""}`}>
+      <div className={`header-controls${menuOpen ? " is-open" : ""}`} id="header-controls">
         <nav aria-label={copy.navLabel}>
           <a href="#demo" onClick={() => setMenuOpen(false)}>{copy.navDemo}</a>
           <a href="#how" onClick={() => setMenuOpen(false)}>{copy.navHow}</a>
           <a href="#faq" onClick={() => setMenuOpen(false)}>{copy.navFaq}</a>
         </nav>
-        <div className="locale-switcher" aria-label={copy.languageLabel}>
+        <div className="locale-switcher" aria-label={copy.languageLabel} role="group">
           {LOCALES.map((item) => (
             <button
               aria-label={LANGUAGE_NAMES[item]}
@@ -65,6 +66,7 @@ export function Header({
         </div>
         <button
           aria-label={copy.themeLabel}
+          aria-pressed={theme === "dark"}
           className="theme-toggle"
           onClick={onThemeChange}
           type="button"

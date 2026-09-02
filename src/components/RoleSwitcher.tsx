@@ -1,9 +1,23 @@
-import { useState } from "react";
+import { useRef, useState, type KeyboardEvent } from "react";
 import type { LandingCopy } from "../content";
 
 export function RoleSwitcher({ copy }: { copy: LandingCopy }) {
   const [activeRole, setActiveRole] = useState(0);
+  const tabRefs = useRef<Array<HTMLButtonElement | null>>([]);
   const role = copy.roles[activeRole];
+
+  function moveTab(event: KeyboardEvent<HTMLButtonElement>, index: number) {
+    let nextIndex = index;
+    if (event.key === "ArrowRight") nextIndex = (index + 1) % copy.roles.length;
+    else if (event.key === "ArrowLeft") nextIndex = (index - 1 + copy.roles.length) % copy.roles.length;
+    else if (event.key === "Home") nextIndex = 0;
+    else if (event.key === "End") nextIndex = copy.roles.length - 1;
+    else return;
+
+    event.preventDefault();
+    setActiveRole(nextIndex);
+    tabRefs.current[nextIndex]?.focus();
+  }
 
   return (
     <section className="roles" id="roles">
@@ -22,7 +36,10 @@ export function RoleSwitcher({ copy }: { copy: LandingCopy }) {
               id={`role-${index}`}
               key={item.name}
               onClick={() => setActiveRole(index)}
+              onKeyDown={(event) => moveTab(event, index)}
+              ref={(element) => { tabRefs.current[index] = element; }}
               role="tab"
+              tabIndex={activeRole === index ? 0 : -1}
               type="button"
             >
               {item.name}
@@ -35,6 +52,7 @@ export function RoleSwitcher({ copy }: { copy: LandingCopy }) {
           id="role-preview"
           key={role.name}
           role="tabpanel"
+          tabIndex={0}
         >
           <span>{role.kicker}</span>
           <h3>{role.title}</h3>

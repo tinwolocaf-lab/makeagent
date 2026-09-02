@@ -19,7 +19,12 @@ export function Journey({ copy }: { copy: LandingCopy }) {
         <ol className="journey-steps">
           {copy.steps.map((step, index) => (
             <li className={index === activeStep ? "is-active" : undefined} key={step}>
-              <button onClick={() => setActiveStep(index)} type="button">
+              <button
+                aria-controls="journey-preview"
+                aria-pressed={activeStep === index}
+                onClick={() => setActiveStep(index)}
+                type="button"
+              >
                 <b>{String(index + 1).padStart(2, "0")}</b>
                 <span>{step}</span>
               </button>
@@ -27,7 +32,7 @@ export function Journey({ copy }: { copy: LandingCopy }) {
           ))}
         </ol>
 
-        <aside className="journey-preview" aria-label={copy.previewLabel}>
+        <aside className="journey-preview" id="journey-preview" aria-label={copy.previewLabel}>
           <div className="preview-bar">
             <div aria-hidden="true" className="window-dots">
               <span />
@@ -41,7 +46,7 @@ export function Journey({ copy }: { copy: LandingCopy }) {
             </div>
             <small>{copy.previewLabel}</small>
           </div>
-          <div className="preview-body" key={preview.prompt}>
+          <div aria-live="polite" className="preview-body" key={preview.prompt}>
             <p className="preview-prompt">{preview.prompt}</p>
             <p className="preview-answer">{preview.answer}</p>
             <span className="preview-source">{preview.source}</span>

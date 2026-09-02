@@ -4,7 +4,7 @@ import { Logo } from "./Logo";
 export function Footer({ copy }: { copy: LandingCopy }) {
   return (
     <footer className="site-footer">
-      <a className="brand" href="#top" aria-label={`${copy.brand} home`}>
+      <a className="brand" href="#top" aria-label={copy.homeLabel}>
         <Logo label={copy.brand} />
       </a>
       <p>{copy.footerNote}</p>
